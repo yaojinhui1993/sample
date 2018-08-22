@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>@yield('title', 'Sample App') - Laravel 入门教程</title>
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-  </head>
-  <body>
+</head>
+
+<body>
     @include('layouts._header')
 
     <div class="container">
-      @yield('content')
-      @include('layouts._footer')
+        @include('shared._messages')
+        @yield('content')
+        @include('layouts._footer')
     </div>
-  </body>
+</body>
+
 </html>
