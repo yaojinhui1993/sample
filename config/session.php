@@ -1,7 +1,10 @@
 <?php
 
-return [
+/*
+ * presets: symfony
+ */
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
@@ -193,5 +196,4 @@ return [
     */
 
     'same_site' => null,
-
 ];

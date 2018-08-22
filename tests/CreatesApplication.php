@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * presets: symfony
+ */
+
 namespace Tests;
 
 use Illuminate\Support\Facades\Hash;
