@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * presets: symfony
+ */
+
 use Illuminate\Foundation\Inspiring;
 
 /*

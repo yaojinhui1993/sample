@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * presets: symfony
+ */
+
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;

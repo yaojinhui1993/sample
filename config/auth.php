@@ -1,7 +1,10 @@
 <?php
 
-return [
+/*
+ * presets: symfony
+ */
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -98,5 +101,4 @@ return [
             'expire' => 60,
         ],
     ],
-
 ];
