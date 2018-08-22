@@ -31,17 +31,18 @@ class StatusesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'content' => 'required|max:140'
+            'content' => 'required|max:140',
         ]);
 
         Auth::user()->statuses()->create([
-            'content' => $request['content']
+            'content' => $request['content'],
         ]);
 
         return redirect()->back();
@@ -50,7 +51,8 @@ class StatusesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -61,7 +63,8 @@ class StatusesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -72,8 +75,9 @@ class StatusesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -84,7 +88,8 @@ class StatusesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Status $status)
@@ -92,6 +97,7 @@ class StatusesController extends Controller
         $this->authorize('delete', $status);
         $status->delete();
         session()->flash('success', '微博已被成功删除！');
+
         return redirect()->back();
     }
 }
