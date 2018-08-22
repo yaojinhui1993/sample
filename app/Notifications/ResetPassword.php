@@ -14,8 +14,6 @@ class ResetPassword extends Notification
 
     /**
      * Create a new notification instance.
-     *
-     * @return void
      */
     public function __construct($token)
     {
@@ -25,7 +23,8 @@ class ResetPassword extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function via($notifiable)
@@ -36,12 +35,13 @@ class ResetPassword extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('重置密码')
             ->line('这是一封密码重置邮件，如果是您本人操作，请点击以下按钮继续：')
             ->action('重置密码', url(route('password.reset', $this->token, false)))
@@ -51,7 +51,8 @@ class ResetPassword extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function toArray($notifiable)
