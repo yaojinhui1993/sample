@@ -1,7 +1,10 @@
 <?php
 
-return [
+/*
+ * presets: symfony
+ */
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Mail Driver
@@ -119,5 +122,4 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
-
 ];

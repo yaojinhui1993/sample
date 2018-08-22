@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * presets: symfony
+ */
+
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
