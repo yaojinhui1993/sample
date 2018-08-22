@@ -9,11 +9,12 @@
 <body>
     @include('layouts._header')
 
-    <div class="container">
+    <div class="container" id="app">
         @include('shared._messages')
         @yield('content')
         @include('layouts._footer')
     </div>
 </body>
 
+<script src="{{ mix('/js/app.js') }}"></script>
 </html>
