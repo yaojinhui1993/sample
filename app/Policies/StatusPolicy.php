@@ -13,8 +13,9 @@ class StatusPolicy
     /**
      * Determine whether the user can view the status.
      *
-     * @param  \App\User  $user
-     * @param  \App\Status  $status
+     * @param \App\User   $user
+     * @param \App\Status $status
+     *
      * @return mixed
      */
     public function view(User $user, Status $status)
@@ -25,7 +26,8 @@ class StatusPolicy
     /**
      * Determine whether the user can create statuses.
      *
-     * @param  \App\User  $user
+     * @param \App\User $user
+     *
      * @return mixed
      */
     public function create(User $user)
@@ -36,8 +38,9 @@ class StatusPolicy
     /**
      * Determine whether the user can update the status.
      *
-     * @param  \App\User  $user
-     * @param  \App\Status  $status
+     * @param \App\User   $user
+     * @param \App\Status $status
+     *
      * @return mixed
      */
     public function update(User $user, Status $status)
@@ -48,8 +51,9 @@ class StatusPolicy
     /**
      * Determine whether the user can delete the status.
      *
-     * @param  \App\User  $user
-     * @param  \App\Status  $status
+     * @param \App\User   $user
+     * @param \App\Status $status
+     *
      * @return mixed
      */
     public function delete(User $user, Status $status)
