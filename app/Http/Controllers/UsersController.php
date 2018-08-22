@@ -12,6 +12,23 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show', 'create', 'store']
+        ]);
+
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
+    }
+
     public function create()
     {
         return view('users.create');
@@ -58,6 +75,8 @@ class UsersController extends Controller
             'name' => 'required|max:50',
             'password' => 'nullable|confirmed|min:6'
         ]);
+
+        $this->authorize('update', $user);
 
         $user->update([
             'name' => $request->name,
