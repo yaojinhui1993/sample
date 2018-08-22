@@ -22,7 +22,7 @@ class SessionsController extends Controller
     {
         $credentials = $this->validate(request(), [
            'email' => 'required|email|max:255',
-           'password' => 'required'
+           'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials, request()->has('remember'))) {
@@ -30,6 +30,7 @@ class SessionsController extends Controller
             return redirect()->intended(route('users.show', [Auth::user()]));
         } else {
             session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
+
             return redirect()->back();
         }
 
@@ -41,6 +42,7 @@ class SessionsController extends Controller
         Auth::logout();
 
         session()->flash('success', '您已成功退出！');
+
         return redirect('login');
     }
 }
