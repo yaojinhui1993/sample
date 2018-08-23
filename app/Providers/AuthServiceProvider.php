@@ -7,10 +7,10 @@
 namespace App\Providers;
 
 use App\User;
-use App\Policies\UserPolicy;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use App\Policies\StatusPolicy;
 use App\Status;
+use App\Policies\UserPolicy;
+use App\Policies\StatusPolicy;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
